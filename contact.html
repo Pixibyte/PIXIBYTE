@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIXIBYTE</title>
+  <script src="script.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<style>
+ /* General Styling */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: fixed;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links li {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 4px;
+    transition: color 0.3s ease;
+  }
+  
+
+
+/* Logo */
+.logo img {
+    width: 200px;
+    height: 50px;
+}
+@media (max-width: 1180px) {
+    .logo img {
+        width: 150px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        display: block;  /* Make sure logo is visible in mobile view */
+        width: 120px;    /* Adjust width */
+        height: 30px;    /* Adjust height */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a {
+    color: rgb(66, 66, 66);
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+/* Active Link */
+.nav-links li.active {
+    background-color: #151515;
+    color: #efefef;
+}
+
+.nav-links li.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+    margin-top: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white; /* ✅ Fixes White Color */
+    font-size: 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+}
+
+/* ✅ Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #0b0b0b;
+        top: 60px;
+        width: 90%;
+        left: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+/* typo */
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.typedtext {
+  margin-top: 20%;
+  border-right: 2px solid black;
+  animation: blinkTextCursor 800ms steps(44) infinite normal;
+  height: 40px;
+  margin-bottom: 55px;
+  color: #000;
+  display: block;
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: black;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+/* typo */
+
+
+
+/* form */
+
+.align-center {
+  text-align: center;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+.row {
+  margin: -20px 0;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row .col {
+  padding: 0 20px;
+  float: left;
+  box-sizing: border-box;
+}
+.row .col.x-50 {
+  width: 50%;
+}
+.row .col.x-100 {
+  width: 100%;
+}
+
+.content-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.get-in-touch {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.get-in-touch .title {
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 36px;
+  line-height: 48px;
+  padding-bottom: 48px;
+  color: #f7ca18;
+  margin-top: 400px;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #000;
+  font-family: Lusitana, serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+  transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-family: Lusitana, serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #888;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.note {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-family: Lusitana, serif;
+  font-size: 16px;
+  line-height: 21px;
+}
+.note .link {
+  color: #888;
+  text-decoration: none;
+}
+.note .link:hover {
+  text-decoration: underline;
+}
+/* form */
+
+</style>
+
+<body>
+    <nav>
+        <div class="nav-container">
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <img src="Logo.png" alt="PIXIBYTE">
+          </a>
+    
+          <!-- Hamburger Menu (For Mobile) -->
+          <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>  <!-- White Hamburger Icon -->
+          </button>
+    
+          <!-- Navigation Links -->
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <section class="get-in-touch">
+          <div class="content title">
+            <h1 class="typedtext"></h1>         
+    
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form row">
+            <input type="hidden" name="access_key" value="5c58d578-ffc1-46a0-be77-6a585c257c04">
+    
+             <div class="form-field col x-50">
+                <input name="name" id="first_name" class="input-text js-input" type="text" placeholder="Name"   required>
+             </div>
+             <div class="form-field col x-50">
+                <input name="email" id="email" class="input-text js-input" type="email" placeholder="E-mail"   required>
+             </div>
+             <div class="form-field col x-100">
+                <input name="message" id="message" class="input-text js-input" type="text" placeholder="Message"   required>
+             </div>
+             <div class="form-field col x-100 align-center">
+                <input class="submit-btn" type="submit" value="Submit">
+             </div>
+          </form>
+       </section>
+    
+      </section>
+
+    
+        <script>
+    function readMore() {
+      var expandInfo = document.getElementById("more-info-js");
+      var mainHeadings = document.getElementById("main-headings-js");
+
+      mainHeadings.style.transform = "scale(0.7)";
+      expandInfo.style.height = "350px";
+
+      $( '.js-input' ).keyup(function() {
+  if( $(this).val() ) {
+     $(this).addClass('not-empty');
+  } else {
+     $(this).removeClass('not-empty');
+  }
+});
+    }
+
+    function typingEffect() {
+    const contactTexts = shuffleArray(['Get in touch!!', ' Got a question?']);
+    const typedtext = document.getElementsByClassName("typedtext")[0];
+    let removing = false;
+    let idx = char = 0;
+
+    setInterval(() => { // We define the interval of the typing speed
+
+        // If we do not reach the limit, we insert characters in the html
+        if (char < contactTexts[idx].length) typedtext.innerHTML += contactTexts[idx][char];
+
+        // 15*150ms = time before starting to remove characters
+        if (char == contactTexts[idx].length + 15) removing = true;
+
+        // Removing characters, the last one always
+        if (removing) typedtext.innerHTML = typedtext.innerHTML.substring(0, typedtext.innerHTML.length - 1);
+
+        char++; // Next character
+
+        // When there is nothing else to remove
+        if (typedtext.innerHTML.length === 0) {
+
+            // If we get to the end of the texts we start over
+            if (idx === contactTexts.length - 1) idx = 0
+            else idx++;
+
+            char = 0; // Start the next text by the first character
+            removing = false; // No more removing characters
+        }
+
+    }, 150); // Typing speed, 150 ms
+
+}
+typingEffect();
+function shuffleArray(array) {
+    let currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+      </script>
+</body>
+</html>
+
